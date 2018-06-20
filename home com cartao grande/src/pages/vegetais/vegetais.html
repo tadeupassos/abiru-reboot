@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu">      
+        </ion-icon>
+      </button>    
+      <ion-title>
+        Vegetais
+      </ion-title>
+      <ion-buttons right>
+        <button ion-button icon-only large>
+          <ion-icon name="cart" style="font-size: 40px"><ion-badge start color="danger">4</ion-badge></ion-icon>
+        </button>     
+      </ion-buttons>         
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content id="fundo">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+  <ion-card>
+    <img src="assets/imgs/tomate12.jpg">
+    <ion-card-content>
+      <p>Tomate (Kg)<br>R$ 2,09</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/Alface-Crespa.png">
+    <ion-card-content>
+      <p>Alface Crespa (Unidade)<br>R$ 2,10</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Quantidade    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/batatas.png">
+    <ion-card-content>
+      <p>Batata<br>R$ 1,70</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>  
+</ion-content>

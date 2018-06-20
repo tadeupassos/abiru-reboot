@@ -1,0 +1,202 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>--> 
+    <ion-title>
+      Abiru
+    </ion-title>
+    <ion-buttons right (tap)="mostrarCarrinho()">
+      <button ion-button icon-only large>
+        <ion-icon name="cart" style="font-size: 40px"><ion-badge start color="danger">4</ion-badge></ion-icon>
+      </button>     
+    </ion-buttons>         
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content id="fundo">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
+  </ion-searchbar>    
+  <ion-card>
+    <ion-row>
+      <ion-col col-8>
+        <img src="assets/imgs/abacaxi.jpg" width="50px" height="140px">
+      </ion-col>
+      <ion-col style="background-color: rgb(208, 243, 188);">
+        <ion-row>
+          <ion-col text-center style="font-size: 17px;">
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row style=" font-size: 20px">
+          <ion-col col-4 text-right>
+              <ion-icon name="ios-remove-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-4 text-center>
+            0
+          </ion-col>
+          <ion-col col-4 text-left>
+              <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </ion-col> 
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="danger" class="text-on-bottom btn">
+              <ion-icon name="cart" style="font-size: 40px"></ion-icon>
+              <div style="font-size: 10px">Adicionar</div>           
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row style="font-size: 15px">
+      <ion-col col-9 text-center>
+          Abacaxi Pérola (Unidade)
+      </ion-col>
+      <ion-col text-left>R$ 4,90</ion-col>
+    </ion-row>
+  </ion-card>  
+  
+  
+
+
+
+
+
+
+  <ion-card>
+    <img src="assets/imgs/tomate12.jpg">
+    <ion-card-content>
+      <p>Tomate (Kg)<br>R$ 2,09</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/Alface-Crespa.png">
+    <ion-card-content>
+      <p>Alface Crespa (Unidade)<br>R$ 2,10</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Quantidade    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/uvas.jpg">
+    <ion-card-content>
+      <p>Uva Rubi (Kg)<br>R$ 2,10</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <ion-card>
+    <img src="assets/imgs/melao.jpg">
+    <ion-card-content>
+      <p>Melão Amarelo<br>R$ 2,40</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>  
+  <ion-card>
+    <img src="assets/imgs/batatas.png">
+    <ion-card-content>
+      <p>Batata<br>R$ 1,70</p>
+    </ion-card-content>
+    <ion-row  style="background-color: rgb(208, 243, 188); font-size: 18px">
+      <ion-col col-6 text-right>
+        Kilo    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        0
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline"></ion-icon>
+      </ion-col>          
+    </ion-row>      
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left small full color="danger">
+          <div>Adicionar no Carrinho</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>    
+</ion-content>
