@@ -1,0 +1,52 @@
+<ion-content>
+
+
+      <ion-list>
+
+        <ion-item>
+          <h2 text-center>Completar Cadastro</h2>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Nome Fantasia</ion-label>
+          <ion-input type="text" [(ngModel)]="model.nomeFantasia"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>CNPJ</ion-label>
+          <ion-input type="text" [(ngModel)]="model.cnpj"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Telefone</ion-label>
+          <ion-input type="text" [(ngModel)]="model.celular"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>CEP</ion-label>
+          <ion-input type="text" [(ngModel)]="model.cep"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Endereço</ion-label>
+          <ion-input type="text" [(ngModel)]="model.endereco"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Número</ion-label>
+          <ion-input type="text" [(ngModel)]="model.numero"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" stacked>Cidade</ion-label>
+          <ion-input type="text" [(ngModel)]="model.cidade"></ion-input>
+        </ion-item>
+
+        <button ion-button full round color="secundary" (tap)="pronto(model)">Pronto</button>
+      </ion-list>
+
+
+
+  
+
+</ion-content>

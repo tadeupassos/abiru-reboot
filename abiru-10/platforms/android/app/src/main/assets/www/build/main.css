@@ -25735,6 +25735,17 @@ page-frutas button ion-badge ~ ion-icon {
   margin-right: 1.2rem;
 }
 
+page-home {
+  /*.item ion-thumbnail {
+        min-width: 15rem;    
+        min-height: 15rem;
+        img {
+            max-width: 17rem;    
+            min-width: 17rem;
+        }
+    }*/
+}
+
 page-home .btn {
   display: block;
   height: 60px;
@@ -25757,16 +25768,6 @@ page-home #icone {
   -ms-flex-item-align: start;
   align-self: flex-start;
   margin-top: 14px;
-}
-
-page-home .item ion-thumbnail {
-  min-width: 15rem;
-  min-height: 15rem;
-}
-
-page-home .item ion-thumbnail img {
-  max-width: 17rem;
-  min-width: 17rem;
 }
 
 page-home button ion-badge {

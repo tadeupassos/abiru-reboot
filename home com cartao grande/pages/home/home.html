@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <!--<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>--> 
+    <ion-title>
+      Abiru
+    </ion-title>
+    <ion-buttons right (tap)="mostrarCarrinho()">
+      <button ion-button icon-only large>
+        <ion-icon name="cart" style="font-size: 40px"><ion-badge start color="danger">{{ qtdeCarrinho }}</ion-badge></ion-icon>
+      </button>     
+    </ion-buttons>         
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content id="fundo">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+  <ion-card *ngFor="let item of produtosItem | async">
+    <ion-thumbnail item-start>
+      <img [src]="item.urlImg">
+    </ion-thumbnail>
+    <h2>{{ item.itemNome }} </h2>
+    <p>{{ item.preco }}</p>
+    <ion-row >
+      <ion-col col-6 text-right>
+        Quantidade    
+      </ion-col>        
+      <ion-col col-2 text-right>
+        <ion-icon name="ios-remove-circle-outline" (tap)="remover(item)"></ion-icon>
+      </ion-col>
+      <ion-col col-2 text-center>
+        {{ item.qtdeItem }}
+      </ion-col>
+      <ion-col col-2 text-left>
+        <ion-icon name="ios-add-circle-outline" (tap)="adicionar(item)"></ion-icon>
+      </ion-col>          
+    </ion-row>  
+    <ion-icon id="icone" name='close-circle' item-end color="danger" style="font-size: 23px" (tap)="removerItemCarrinho(item)"></ion-icon>
+  </ion-card>
+  <ion-card *ngFor="let produto of produtosItem | async">
+    <ion-row>
+      <ion-col col-8>
+        <img [src]="produto.urlImg" width="40px" height="140px">
+      </ion-col>
+      <ion-col style="background-color: rgb(208, 243, 188);">
+        <ion-row>
+          <ion-col text-center style="font-size: 17px;">
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row style=" font-size: 20px">
+          <ion-col col-4 text-right (tap)="remover(produto)">
+              <ion-icon name="ios-remove-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-4 text-center>
+            {{ produto.qtdeItem }}
+          </ion-col>
+          <ion-col col-4 text-left (tap)="adicionar(produto)">
+              <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </ion-col> 
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="danger" class="text-on-bottom btn" (tap)="addCarrinho(produto)">
+              <ion-icon name="cart" style="font-size: 30px"></ion-icon>
+              <div style="font-size: 10px">Adicionar</div>           
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row style="font-size: 15px">
+      <ion-col col-9 text-center>
+        {{ produto.itemNome }}
+      </ion-col>
+      <ion-col text-left>R$ {{ produto.preco }}</ion-col>
+    </ion-row>
+  </ion-card>  
+</ion-content>

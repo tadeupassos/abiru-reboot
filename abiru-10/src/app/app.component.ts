@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AbbasPage } from '../pages/abbas/abbas';
 
 import { AngularFireAuth } from 'angularfire2/auth';
+import { ServicosProvider } from '../providers/servicos/servicos';
 
 @Component({
   templateUrl: 'app.html'
@@ -13,10 +14,11 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class MyApp {
   rootPage: any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,  afAuth: AngularFireAuth) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,  afAuth: AngularFireAuth, public serv: ServicosProvider) {
 
     afAuth.authState.subscribe(user => {
       if(user){
+        this.serv.usuarioLogado.email = user.email;
         this.rootPage = AbbasPage;
       }else{
         this.rootPage = 'LoginPage';

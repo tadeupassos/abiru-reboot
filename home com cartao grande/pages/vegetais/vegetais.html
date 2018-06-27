@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu">      
+        </ion-icon>
+      </button>    
+      <ion-title>
+        Vegetais
+      </ion-title>
+      <ion-buttons right (tap)="mostrarCarrinho()">
+        <button ion-button icon-only large>
+          <ion-icon name="cart" style="font-size: 40px"><ion-badge start color="danger">{{ qtdeCarrinho }}</ion-badge></ion-icon>
+        </button>     
+      </ion-buttons>         
+    </ion-navbar>
+  </ion-header>
+
+<ion-content id="fundo">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
+  </ion-searchbar>
+  <ion-card *ngFor="let vegetal of vegetais | async">
+    <ion-row>
+      <ion-col col-8>
+        <img [src]="vegetal.urlImg" width="40px" height="140px">
+      </ion-col>
+      <ion-col style="background-color: rgb(208, 243, 188);">
+        <ion-row>
+          <ion-col text-center style="font-size: 17px;">
+            Quantidade
+          </ion-col>
+        </ion-row>
+        <ion-row style=" font-size: 20px">
+          <ion-col col-4 text-right (tap)="remover(vegetal)">
+              <ion-icon name="ios-remove-circle-outline"></ion-icon>
+          </ion-col>
+          <ion-col col-4 text-center>
+            {{ vegetal.qtdeItem }}
+          </ion-col>
+          <ion-col col-4 text-left (tap)="adicionar(vegetal)">
+              <ion-icon name="ios-add-circle-outline"></ion-icon>
+          </ion-col> 
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button color="danger" class="text-on-bottom btn" (tap)="addCarrinho(vegetal)">
+              <ion-icon name="cart" style="font-size: 30px"></ion-icon>
+              <div style="font-size: 10px">Adicionar</div>           
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row style="font-size: 15px">
+      <ion-col col-9 text-center>
+        {{ vegetal.itemNome }}
+      </ion-col>
+      <ion-col text-left>R$ {{ vegetal.preco }}</ion-col>
+    </ion-row>
+  </ion-card>  
+</ion-content>

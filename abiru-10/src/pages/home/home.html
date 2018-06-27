@@ -15,46 +15,56 @@
 </ion-header>
  
 <ion-content id="fundo">
-  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
-  </ion-searchbar>
+  <ion-searchbar [(ngModel)]="buscaLetra" (ionInput)="filtrarPorLetra()" placeholder="Buscar">
+  </ion-searchbar> 
 
-  <ion-card *ngFor="let produto of produtosItem | async">
-    <ion-row>
-      <ion-col col-8>
-        <img [src]="produto.urlImg" width="40px" height="140px">
-      </ion-col>
-      <ion-col style="background-color: rgb(208, 243, 188);">
+  <ion-list>
+    <ion-card *ngFor="let produto of produtosItem | async">
+      <ion-grid no-padding>
         <ion-row>
-          <ion-col text-center style="font-size: 17px;">
-            Quantidade
+          <ion-col text-center col-4>
+            <img [src]="produto.urlImg">
+          </ion-col>
+          <ion-col col-4>
+            <ion-row>
+              <ion-col text-center>
+                <div style="font-size: 15px">{{ produto.itemNome }}</div>
+              </ion-col>
+            </ion-row> 
+            <ion-row>
+              <ion-col text-center>
+                <div style="font-weight: bold; font-size: 20px"> R$ {{ produto.preco }} </div>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col col-4>
+            <ion-row style="font-size: 18px">
+              <ion-col col-4 text-left>
+                <ion-icon name="ios-remove-circle-outline" (tap)="remover(produto)"></ion-icon>
+              </ion-col>
+              <ion-col col-4 text-center>
+                {{ produto.qtdeItem }}
+              </ion-col>
+              <ion-col col-4 text-right>
+                <ion-icon name="ios-add-circle-outline" (tap)="adicionar(produto)"></ion-icon>
+              </ion-col> 
+            </ion-row>
+            <ion-row style="font-size: 11px; margin-top: -10px; margin-bottom: -10px">
+              <ion-col text-center>
+                {{ produto.medida }}
+              </ion-col>
+            </ion-row>            
+            <ion-row>
+              <ion-col text-center>
+                <button style="font-size: 15px" ion-button small icon-start (tap)="addCarrinho(produto)">
+                  <!--<ion-icon name="cart"></ion-icon>-->
+                  Comprar
+                </button>
+              </ion-col>            
+            </ion-row> 
           </ion-col>
         </ion-row>
-        <ion-row style=" font-size: 20px">
-          <ion-col col-4 text-right (tap)="remover(produto)">
-              <ion-icon name="ios-remove-circle-outline"></ion-icon>
-          </ion-col>
-          <ion-col col-4 text-center>
-            {{ produto.qtdeItem }}
-          </ion-col>
-          <ion-col col-4 text-left (tap)="adicionar(produto)">
-              <ion-icon name="ios-add-circle-outline"></ion-icon>
-          </ion-col> 
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <button ion-button color="danger" class="text-on-bottom btn" (tap)="addCarrinho(produto)">
-              <ion-icon name="cart" style="font-size: 30px"></ion-icon>
-              <div style="font-size: 10px">Adicionar</div>           
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-    </ion-row>
-    <ion-row style="font-size: 15px">
-      <ion-col col-9 text-center>
-        {{ produto.itemNome }}
-      </ion-col>
-      <ion-col text-left>R$ {{ produto.preco }}</ion-col>
-    </ion-row>
-  </ion-card>  
+      </ion-grid> 
+    </ion-card> 
+  </ion-list> 
 </ion-content>

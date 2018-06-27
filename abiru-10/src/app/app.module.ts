@@ -17,6 +17,7 @@ import { FrutasPage } from '../pages/frutas/frutas';
 import { CarrinhoPage } from '../pages/carrinho/carrinho';
 
 import { ServicosProvider } from '../providers/servicos/servicos';
+import { IonMaskModule } from '@pluritech/ion-mask';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCBazjQytaKuBMdV7ReWPB-pm9OSwo2d_k",
@@ -39,6 +40,7 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonMaskModule.forRoot(),
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
